@@ -1,8 +1,8 @@
 FROM v2ray/official
 MAINTAINER pch18.cn
 
-COPY config.json /etc/v2ray/config.json
-COPY caddy.conf /etc/caddy/caddy.conf
+COPY config.json /etc/v2ray/config.json.tmp
+COPY caddy.conf /etc/caddy/caddy.conf.tmp
 COPY run.sh /run.sh
 
 RUN apk update \ 
