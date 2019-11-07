@@ -11,7 +11,7 @@ RUN apk update \
     
 ENV DOMAIN ray.domain.com
 ENV MAIL name@mail.com
-ENV REDIRECT_URL https://www.yahoo.co.jp/
+ENV REDIRECT_URL https://agar.io/
 
 ENV UUID_1 b831381d-6324-4d53-ad4f-8cda48b30811
 
