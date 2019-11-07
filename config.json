@@ -6,7 +6,7 @@
             "protocol": "vmess",
             "settings": {
                 "clients": [
-                    ${LIST_OF_UUID}
+                    ${UUID_LIST}
                 ],
                 "default": {
                     "level": 0,
