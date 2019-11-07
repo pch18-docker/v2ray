@@ -9,7 +9,10 @@ RUN apk update \
     && apk add caddy \ 
     && chmod 777 /run.sh
     
+    
 ENV DOMAIN ray.domain.com
+ENV MAIL name@mail.com
+
 ENV REDIRECT_URL www.baidu.com
 ENV UUID_1 b831381d-6324-4d53-ad4f-8cda48b30811
 
