@@ -1,4 +1,3 @@
-#! /bin/bash
 
 uuid_list=''
 for line in `env|grep '^UUID_.*'`
