@@ -15,4 +15,5 @@ ENV REDIRECT_URL https://www.yahoo.co.jp/
 
 ENV UUID_1 b831381d-6324-4d53-ad4f-8cda48b30811
 
+VOLUME /root/.caddy
 CMD /run.sh
