@@ -1,7 +1,7 @@
 #! /bin/bash
 
 uuid_list=''
-for line in `env|grep '^UUID_*=.*'`
+for line in `env|grep '^UUID_.*'`
 do 
     uuid=${line#*=}
     uuid_list="${uuid_list},{\"id\":\"${uuid}\"}"
