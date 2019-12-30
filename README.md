@@ -8,7 +8,8 @@
 | 名称 | 值 |
 |-|-|
 | DOMAIN | 域名 |
-| MAIL | 申请证书时邮箱 |
+| EMAIL | 申请证书时邮箱 |
+| RAY_PATH | ray的请求地址 |
 | UUID_1 | 标准uuid4 | 
 | UUID_2 | 标准uuid4 | 
 | UUID_X | 标准uuid4 | 
@@ -25,6 +26,6 @@
 | TLS  | 打开 |
 | 允许不安全 | 关闭 |
 | 混淆-名称 | websocket |
-| 混淆-路径 | /ray |
+| 混淆-路径 | /${RAY_PATH} |
 | 多路复用 | 打开 |
 | Fast Open | 打开 | 
