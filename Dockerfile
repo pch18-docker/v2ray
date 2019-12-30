@@ -4,6 +4,7 @@ MAINTAINER pch18.cn
 COPY config.json /etc/v2ray/config.json.tmp
 COPY caddy.conf /etc/caddy/caddy.conf
 COPY run.sh /run.sh
+COPY README.md /www/down/使用说明.md
 
 RUN apk update && apk add caddy && chmod 777 /run.sh
 
