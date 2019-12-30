@@ -8,7 +8,7 @@ COPY run.sh /run.sh
 RUN apk update && apk add caddy && chmod 777 /run.sh
 
 ENV DOMAIN ray.domain.com
-ENV MAIL name@mail.com
+ENV EMAIL name@mail.com
 ENV REDIRECT_URL https://agar.io/
 ENV RAY_PATH _ray
 
