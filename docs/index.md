@@ -10,7 +10,7 @@
 | TLS  | 打开 |
 | 允许不安全 | 关闭 |
 | 混淆-名称 | websocket |
-| 混淆-路径 | <script>document.write(document.cookie.match(/ray_path=([^;]+)/)[1])</script> |
+| 混淆-路径 | <script>document.write('/'+document.cookie.match(/ray_path=([^;]+)/)[1])</script> |
 | 多路复用 | 打开 |
 | Fast Open | 打开 | 
 
