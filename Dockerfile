@@ -4,8 +4,6 @@ MAINTAINER pch18.cn
 ADD config.json /etc/v2ray/config.json.tmp
 ADD caddy.conf /etc/caddy/caddy.conf
 ADD run.sh /run.sh
-ADD down /www/down
-ADD README.md /www/down/使用说明.md
 
 RUN apk update && apk add caddy && chmod 777 /run.sh
 
