@@ -3,7 +3,7 @@ uuid_list=''
 for line in `env|grep '^UUID_.*'`
 do 
     uuid=${line#*=}
-    uuid_list="${uuid_list},{\"id\":\"${uuid}\"}"
+    uuid_list="${uuid_list},{\"id\":\"${uuid}\",\"alterId\":${ALTER_ID}}"
 done
 uuid_list="${uuid_list:1}"
 
