@@ -14,6 +14,7 @@ ENV RAY_PATH _ray
 ENV DOC_PATH _doc
 ENV DOC_URL https://pch18-docker.github.io/v2ray/
 ENV REDIRECT_URL https://agar.io/
+ENV ALTER_ID 64
 
 ENV UUID_1 b831381d-6324-4d53-ad4f-8cda48b30811
 
