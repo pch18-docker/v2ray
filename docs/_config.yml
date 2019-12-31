@@ -1,5 +1,6 @@
 theme: jekyll-theme-cayman
 
-win_url: haha
-mac_url: haha
-android_url: haha
+github:
+    win_url: win-v2rayN.zip
+    mac_url: apps/mac-V2rayU.dmg
+    android_url: apps/android-BifrostV.apk
