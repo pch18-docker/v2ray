@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="https://pch18-docker.github.io/v2ray/assets/css/style.css">
-
-
 # v2ray 使用说明
 
 # 客户端设置  
