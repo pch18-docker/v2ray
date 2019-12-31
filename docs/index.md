@@ -9,7 +9,8 @@
 | UUID |  <font color='red'>提供的UUID</font> |
 | TLS  | 打开 |
 | 允许不安全 | 关闭 |
-| 混淆-名称 | websocket / ws |
-| 混淆-路径 | <script>document.write('/'+document.cookie.match(/ray_path=([^;]+)/)[1])</script> |
 | 多路复用 | 打开 |
 | Fast Open | 打开 | 
+| 混淆-名称 | websocket 或 ws |
+| 混淆-主机名host | <script>document.write(location.host)</script> |
+| 混淆-路径path | <script>document.write('/'+document.cookie.match(/ray_path=([^;]+)/)[1])</script> |
