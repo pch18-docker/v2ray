@@ -11,6 +11,7 @@
 | 允许不安全 | 关闭 |
 | 多路复用 | 打开 |
 | Fast Open | 打开 | 
+| alterId | 4 | 
 | 混淆-类型 | websocket 或 ws |
 | 混淆-主机名host | <script>document.write(location.host)</script> |
 | 混淆-路径path | <script>document.write('/'+document.cookie.match(/ray_path=([^;]+)/)[1])</script> |
