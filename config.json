@@ -7,11 +7,7 @@
             "settings": {
                 "clients": [
                     $UUID_LIST
-                ],
-                "default": {
-                    "level": 0,
-                    "alterId": 4
-                }
+                ]
             },
             "streamSettings": {
                 "network": "ws",
