@@ -10,7 +10,7 @@
                 ],
                 "default": {
                     "level": 0,
-                    "alterId": 4
+                    "alterId": 64
                 }
             },
             "streamSettings": {
