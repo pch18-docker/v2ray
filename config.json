@@ -6,7 +6,7 @@
             "protocol": "vmess",
             "settings": {
                 "clients": [
-                    {$UUID_LIST}
+                    $UUID_LIST
                 ],
                 "default": {
                     "level": 0,
@@ -16,7 +16,7 @@
             "streamSettings": {
                 "network": "ws",
                 "wsSettings": {
-                    "path": "{$RAY_PATH}"
+                    "path": "$RAY_PATH"
                 }
             }
         }
