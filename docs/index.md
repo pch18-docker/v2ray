@@ -4,7 +4,7 @@
 
 | 设置项 | 值 |
 | - | - |
-| 服务器 | 指定域名 |
+| 服务器 | <script>document.write(location.domain)</script> |
 | 端口 | 443 |
 | UUID |  指定UUID |
 | TLS  | 打开 |
