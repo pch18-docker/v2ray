@@ -2,5 +2,5 @@ theme: jekyll-theme-cayman
 
 github:
     win_url: apps/win-v2rayN.zip
-    mac_url: apps/mac-V2RayX.zip
+    mac_url: apps/mac-V2rayU.zip
     android_url: apps/android-BifrostV.apk
