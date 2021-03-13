@@ -1,7 +1,7 @@
 # v2ray 使用说明
 
 请先填写UUID后查看配置：
-<input id="input_uuid" onkeypress="updateConfig()" style="width: 100%;" />
+<input id="input_uuid" style="width: 100%;" onkeyup="updateConfig()" maxlength="36" />
 
 
 ## Vmess 配置设置
