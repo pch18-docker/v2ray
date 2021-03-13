@@ -26,3 +26,11 @@
 | UUID_1 | 标准uuid4 | 
 | UUID_2 | 标准uuid4 | 
 | UUID_X | 标准uuid4 | 
+
+# 外层nginx转发
+- PROTOCAL 从 `https` 改成 `http`
+- nginx 设置反向代理，配置文件中 location / 里加如下两条
+```
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "Upgrade";
+```
