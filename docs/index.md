@@ -45,6 +45,7 @@
       path: config.path,
       h2path: config.path,
       
+      tls: 1,
       mux: 1,
       tfo: 1, // TCP Fast Open
       allowInsecure: 0,
