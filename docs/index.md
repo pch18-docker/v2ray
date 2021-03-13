@@ -127,7 +127,15 @@
 
 <script>
   
+  if(localStorage){
+    document.getElementById('input_uuid').value = localStorage.input_uuid
+  }
+  updateConfig()
+  
   function updateConfig() {
+    if(localStorage){
+      localStorage.input_uuid = document.getElementById('input_uuid').value.trim()
+    }
     var replaceList = {
       '${config.host}': location.host,
       '${config.path}': '/' + document.cookie.match(/ray_path=([^;]+)/)[1],
@@ -139,8 +147,6 @@
       }
     });
   }
-  
-  updateConfig()
   
 </script>
 
