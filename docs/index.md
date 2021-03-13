@@ -1,12 +1,28 @@
 <script>
-  window.config_host = function(){ document.write(location.host) };
-  window.config_path = function(){ document.write('/'+document.cookie.match(/ray_path=([^;]+)/)[1]) };
+  
+  function updateConfig() {
+    var replaceList = {
+      '{{config.host}}': location.host,
+      '{{config.path}}': '/' + document.cookie.match(/ray_path=([^;]+)/)[1],
+      '{{config.uuid}}': document.getElementById('input_uuid')? document.getElementById('uuid').value : '请填写UUID'
+    };
+    document.getElementsByTagName('code').forEach(function (code) {
+      for (var replaceKey in replaceList) {
+        code.innerText.replaceAll(replaceKey, replaceList[replaceKey]);
+      }
+    });
+  }
+  updateConfig()
+  
 </script>
 
 # v2ray 使用说明
+请填写UUID来生成配置文件：<input id="input_uuid" onChange="updateConfig()"/>
 
-# 客户端设置  
+# 客户端配置
 
+
+## MacOS 客户端 V2rayU 配置文件
 ```
 {
   "log": {
@@ -42,9 +58,9 @@
       "protocol": "vmess",
       "streamSettings": {
         "wsSettings": {
-          "path": "<script>config_path()</script>",
+          "path": "{{config.path}}",
           "headers": {
-            "host": "<script>config_host()</script>"
+            "host": "{{config.host}}"
           }
         },
         "tlsSettings": {
@@ -57,10 +73,10 @@
       "settings": {
         "vnext": [
           {
-            "address": "<script>config_path()</script>",
+            "address": "{{config.host}}",
             "users": [
               {
-                "id": "uuidddddddddddddddd",
+                "id": "{{config.uuid}}",
                 "alterId": 0,
                 "level": 0,
                 "security": "auto"
@@ -101,17 +117,3 @@
 }
 ```
 
-
-| 设置项 | 值 |
-| - | - |
-| 服务器 | <script>config_host()</script> |
-| 端口 | 443 |
-| UUID |  <font color='red'>提供的UUID</font> |
-| TLS  | 打开 |
-| 允许不安全 | 关闭 |
-| 多路复用 | 打开 |
-| Fast Open | 打开 | 
-| alterId | 4 | 
-| 混淆-类型 | websocket 或 ws |
-| 混淆-主机名host | <script>document.write(host)</script> |
-| 混淆-路径path | <script>document.write('/'+document.cookie.match(/ray_path=([^;]+)/)[1])</script> |
