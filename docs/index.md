@@ -53,7 +53,7 @@
     
 
     document.getElementById('input_config').value = 
-        config_URL + '?' + Object.keys(config_query).map(k=>encodeURIComponent(k) + '=' + encodeURIComponent(config_query[k])).join('&')
+        config_URL + '?' + Object.keys(config_query).map(k=>encodeURIComponent(k) + '=' + encodeURIComponent(config_query[k])).join('&');
   }
   
 </script>
