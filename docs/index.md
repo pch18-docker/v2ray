@@ -5,10 +5,9 @@
 
 
 ## Vmess 配置设置
-```
-请先正确填写 UUID ！！
-```
-  
+
+<input id="input_config" style="width: 100%;" readonly />
+
 
 
 
@@ -53,7 +52,8 @@
     }
     
 
-    codeEle.innerHTML = config_URL + '?' + Object.keys(config_query).map(k=>encodeURIComponent(k) + '=' + encodeURIComponent(config_query[k])).join('&')
+    document.getElementById('input_config').value = 
+        config_URL + '?' + Object.keys(config_query).map(k=>encodeURIComponent(k) + '=' + encodeURIComponent(config_query[k])).join('&')
   }
   
 </script>
