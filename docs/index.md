@@ -23,12 +23,12 @@
     var codeEle = document.getElementsByTagName('code')[0];
     
     if(!uuid.match(/\w{8}(-\w{4}){3}-\w{12}/)) {
-      codeEle.innerHTML = '请先正确填写 UUID ！！'
+      document.getElementById('input_config').value = '请先正确填写 UUID ！！';
       return 0;
     }
     
     if(localStorage){
-      localStorage.input_uuid = uuid
+      localStorage.input_uuid = uuid;
     }
     
     var config = {
@@ -37,7 +37,7 @@
       uuid: document.getElementById('input_uuid').value.trim() || '请填写UUID'
     };
     
-    var config_URL = 'vmess://auto:' + config.uuid + '@' + config.host + ':443'
+    var config_URL = 'vmess://auto:' + config.uuid + '@' + config.host + ':443';
     var config_query = {
       network: 'ws',
       obfs: 'websocket',
@@ -49,7 +49,7 @@
       tfo: 1, // TCP Fast Open
       allowInsecure: 0,
       
-    }
+    };
     
 
     document.getElementById('input_config').value = 
