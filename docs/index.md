@@ -22,7 +22,7 @@
     var uuid = document.getElementById('input_uuid').value.trim();
     var codeEle = document.getElementsByTagName('code')[0];
     
-    if(!uuid.match(/\w{8}(-\w{4}){3}-\w{12}/)) {
+    if(!uuid.match(/^\w{8}(-\w{4}){3}-\w{12}$/)) {
       document.getElementById('input_config').value = '请先正确填写 UUID ！！';
       return 0;
     }
@@ -34,7 +34,7 @@
     var config = {
       host: location.host,
       path: '/' + document.cookie.match(/ray_path=([^;]+)/)[1],
-      uuid: document.getElementById('input_uuid').value.trim() || '请填写UUID'
+      uuid: uuid || '请填写UUID'
     };
     
     var config_URL = 'vmess://auto:' + config.uuid + '@' + config.host + ':443';
