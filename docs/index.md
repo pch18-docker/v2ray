@@ -1,132 +1,69 @@
 # v2ray 使用说明
 
-请填写UUID来生成配置文件：<input id="input_uuid" onChange="updateConfig()"/>
+请先填写UUID：<input id="input_uuid" onChange="updateConfig()"/>
 
 # 客户端配置
 
 
-## MacOS 客户端 V2rayU 配置文件
+## MacOS 客户端 V2rayU 配置
 ```
-{
-  "log": {
-    "error": "",
-    "loglevel": "debug",
-    "access": ""
-  },
-  "inbounds": [
-    {
-      "listen": "127.0.0.1",
-      "protocol": "socks",
-      "settings": {
-        "udp": false,
-        "auth": "noauth"
-      },
-      "port": "1080"
-    },
-    {
-      "listen": "127.0.0.1",
-      "protocol": "http",
-      "settings": {
-        "timeout": 360
-      },
-      "port": "1087"
-    }
-  ],
-  "outbounds": [
-    {
-      "mux": {
-        "enabled": false,
-        "concurrency": 8
-      },
-      "protocol": "vmess",
-      "streamSettings": {
-        "wsSettings": {
-          "path": "${config.path}",
-          "headers": {
-            "host": "${config.host}"
-          }
-        },
-        "tlsSettings": {
-          "allowInsecure": false
-        },
-        "security": "tls",
-        "network": "ws"
-      },
-      "tag": "proxy",
-      "settings": {
-        "vnext": [
-          {
-            "address": "${config.host}",
-            "users": [
-              {
-                "id": "${config.uuid}",
-                "alterId": 0,
-                "level": 0,
-                "security": "auto"
-              }
-            ],
-            "port": 443
-          }
-        ]
-      }
-    },
-    {
-      "tag": "direct",
-      "protocol": "freedom",
-      "settings": {
-        "domainStrategy": "AsIs",
-        "redirect": "",
-        "userLevel": 0
-      }
-    },
-    {
-      "tag": "block",
-      "protocol": "blackhole",
-      "settings": {
-        "response": {
-          "type": "none"
-        }
-      }
-    }
-  ],
-  "dns": {},
-  "routing": {
-    "settings": {
-      "domainStrategy": "AsIs",
-      "rules": []
-    }
-  },
-  "transport": {}
-}
+请先正确填写 UUID ！！
 ```
-
-
-
-
-
+  
+## IOS 客户端 Shadowrocket 配置
+```
+请先正确填写 UUID ！！
+```
 
 
 <script>
   
   if(localStorage){
-    document.getElementById('input_uuid').value = localStorage.input_uuid || ''
+    document.getElementById('input_uuid').value = localStorage.input_uuid || '';
   }
-  updateConfig()
+  updateConfig();
   
   function updateConfig() {
+    var uuid = document.getElementById('input_uuid').value.trim();
+    var codeEle = document.getElementsByTagName('code');
+    var codeEle_V2rayU = codeEle[0];
+    var codeEle_Shadowrocket = codeEle[1];
+    
+    if(!uuid.exec(/\w{8}(-\w{4}){3}-\w{12}/)) {
+      codeEle_V2rayU.innerHTML = '请先正确填写 UUID ！！'
+      codeEle_Shadowrocket.innerHTML = '请先正确填写 UUID ！！'
+      return 0;
+    }
+    
     if(localStorage){
-      localStorage.input_uuid = document.getElementById('input_uuid').value.trim()
+      localStorage.input_uuid = uuid
     }
-    var replaceList = {
-      '${config.host}': location.host,
-      '${config.path}': '/' + document.cookie.match(/ray_path=([^;]+)/)[1],
-      '${config.uuid}': document.getElementById('input_uuid').value.trim() || '请填写UUID'
+    
+    var config = {
+      host: location.host,
+      path: '/' + document.cookie.match(/ray_path=([^;]+)/)[1],
+      uuid: document.getElementById('input_uuid').value.trim() || '请填写UUID'
     };
-    for(var code of document.getElementsByTagName('code')){
-      for (var replaceKey in replaceList) {
-        code.innerText = code.innerText.replaceAll(replaceKey, replaceList[replaceKey]);
-      }
-    }
+    
+    var config_V2rayU = 'vmess://' + window.btoa(JSON.stringify({
+      "port": "443",
+      "ps": "default",
+      "tls": "tls",
+      "id": config.uuid,
+      "aid": "0",
+      "v": "2",
+      "host": config.host,
+      "type": "none",
+      "path": "/_ray",
+      "net": "ws",
+      "add": config.host
+    }));
+    
+    var config_Shadowrocket = 'vmess://' + window.btoa('auto:' + config.uuid + '@' + config.host + ':443') + 
+                              '?path=' + config.path + '&obfs=websocket&tls=1&tfo=1&mux=1'
+    
+    codeEle_V2rayU.innerHTML =  config_V2rayU;
+    codeEle_V2rayU.innerHTML = 'vmess://' + config_V2rayU;
   }
   
 </script>
