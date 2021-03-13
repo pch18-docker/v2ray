@@ -124,7 +124,7 @@
     };
     for(var code of document.getElementsByTagName('code')){
       for (var replaceKey in replaceList) {
-        code.innerText.replaceAll(replaceKey, replaceList[replaceKey]);
+        code.innerText = code.innerText.replaceAll(replaceKey, replaceList[replaceKey]);
       }
     }
   }
