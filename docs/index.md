@@ -109,7 +109,7 @@
 <script>
   
   if(localStorage){
-    document.getElementById('input_uuid').value = localStorage.input_uuid
+    document.getElementById('input_uuid').value = localStorage.input_uuid || ''
   }
   updateConfig()
   
