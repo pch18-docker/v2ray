@@ -39,15 +39,19 @@
     
     var config_URL = 'vmess://auto:' + config.uuid + '@' + config.host + ':443';
     var config_query = {
-      network: 'ws',
-      obfs: 'websocket',
+      network: 'ws',     // for V2rayU
+      obfs: 'websocket', // for Shadowrocket
       
-      path: config.path,
-      h2path: config.path,
+      h2path: config.path, // for V2rayU
+      path: config.path,   // for Shadowrocket
       
       tls: 1,
       mux: 1,
-      tfo: 1, // TCP Fast Open
+      
+      aid: 4,     // for V2rayU
+      alterId: 4, // for Shadowrocket
+      
+      tfo: 1, // TCP Fast Open for Shadowrocket
       allowInsecure: 0,
       
     };
