@@ -1,22 +1,5 @@
-<script>
-  
-  function updateConfig() {
-    var replaceList = {
-      '${config.host}': location.host,
-      '${config.path}': '/' + document.cookie.match(/ray_path=([^;]+)/)[1],
-      '${config.uuid}': document.getElementById('input_uuid')? document.getElementById('uuid').value : '请填写UUID'
-    };
-    document.getElementsByTagName('code').forEach(function (code) {
-      for (var replaceKey in replaceList) {
-        code.innerText.replaceAll(replaceKey, replaceList[replaceKey]);
-      }
-    });
-  }
-  updateConfig()
-  
-</script>
-
 # v2ray 使用说明
+
 请填写UUID来生成配置文件：<input id="input_uuid" onChange="updateConfig()"/>
 
 # 客户端配置
@@ -116,4 +99,54 @@
   "transport": {}
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  
+  function updateConfig() {
+    var replaceList = {
+      '${config.host}': location.host,
+      '${config.path}': '/' + document.cookie.match(/ray_path=([^;]+)/)[1],
+      '${config.uuid}': document.getElementById('input_uuid').value.trim() || '请填写UUID'
+    };
+    document.getElementsByTagName('code').forEach(function (code) {
+      for (var replaceKey in replaceList) {
+        code.innerText.replaceAll(replaceKey, replaceList[replaceKey]);
+      }
+    });
+  }
+  
+  updateConfig()
+  
+</script>
+
+
+
+
+
+
 
