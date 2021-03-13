@@ -42,8 +42,8 @@
       network: 'ws',
       obfs: 'websocket',
       
-      path: config.host,
-      h2path: config.host,
+      path: config.path,
+      h2path: config.path,
       
       mux: 1,
       tfo: 1, // TCP Fast Open
