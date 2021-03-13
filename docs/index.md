@@ -122,7 +122,7 @@
       '${config.path}': '/' + document.cookie.match(/ray_path=([^;]+)/)[1],
       '${config.uuid}': document.getElementById('input_uuid').value.trim() || '请填写UUID'
     };
-    document.getElementsByTagName('code').forEach(function (code) {
+    for(var code of document.getElementsByTagName('code')){
       for (var replaceKey in replaceList) {
         code.innerText.replaceAll(replaceKey, replaceList[replaceKey]);
       }
