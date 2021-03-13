@@ -29,7 +29,7 @@
     var codeEle_V2rayU = codeEle[0];
     var codeEle_Shadowrocket = codeEle[1];
     
-    if(!uuid.exec(/\w{8}(-\w{4}){3}-\w{12}/)) {
+    if(!uuid.match(/\w{8}(-\w{4}){3}-\w{12}/)) {
       codeEle_V2rayU.innerHTML = '请先正确填写 UUID ！！'
       codeEle_Shadowrocket.innerHTML = '请先正确填写 UUID ！！'
       return 0;
