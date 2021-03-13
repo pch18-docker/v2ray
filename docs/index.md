@@ -3,18 +3,13 @@
 请先填写UUID后查看配置：
 <input id="input_uuid" onChange="updateConfig()" style="width: 100%;" />
 
-# 客户端配置
 
-
-## MacOS 客户端 V2rayU 配置
+## Vmess 配置设置
 ```
 请先正确填写 UUID ！！
 ```
   
-## IOS 客户端 Shadowrocket 配置
-```
-请先正确填写 UUID ！！
-```
+
 
 
 <script>
@@ -26,13 +21,10 @@
   
   function updateConfig() {
     var uuid = document.getElementById('input_uuid').value.trim();
-    var codeEle = document.getElementsByTagName('code');
-    var codeEle_V2rayU = codeEle[0];
-    var codeEle_Shadowrocket = codeEle[1];
+    var codeEle = document.getElementsByTagName('code')[0];
     
     if(!uuid.match(/\w{8}(-\w{4}){3}-\w{12}/)) {
-      codeEle_V2rayU.innerHTML = '请先正确填写 UUID ！！'
-      codeEle_Shadowrocket.innerHTML = '请先正确填写 UUID ！！'
+      codeEle.innerHTML = '请先正确填写 UUID ！！'
       return 0;
     }
     
@@ -46,25 +38,22 @@
       uuid: document.getElementById('input_uuid').value.trim() || '请填写UUID'
     };
     
-    var config_V2rayU = 'vmess://' + window.btoa(JSON.stringify({
-      "port": "443",
-      "ps": "default",
-      "tls": "tls",
-      "id": config.uuid,
-      "aid": "0",
-      "v": "2",
-      "host": config.host,
-      "type": "none",
-      "path": "/_ray",
-      "net": "ws",
-      "add": config.host
-    }));
+    var config_URL = 'vmess://auto:' + config.uuid + '@' + config.host + ':443'
+    var config_query = {
+      network: 'ws',
+      obfs: 'websocket',
+      
+      path: config.host,
+      h2path: config.host,
+      
+      mux: 1,
+      tfo: 1, // TCP Fast Open
+      allowInsecure: 0,
+      
+    }
     
-    var config_Shadowrocket = 'vmess://' + window.btoa('auto:' + config.uuid + '@' + config.host + ':443') + 
-                              '?path=' + config.path + '&obfs=websocket&tls=1&tfo=1&mux=1';
-    
-    codeEle_V2rayU.innerHTML = config_V2rayU;
-    codeEle_Shadowrocket.innerHTML = config_Shadowrocket;
+
+    codeEle.innerHTML = config_URL + '?' + Object.keys(config_query).map(k=>encodeURIComponent(k) + '=' + encodeURIComponent(config_query[k])).join('&')
   }
   
 </script>
