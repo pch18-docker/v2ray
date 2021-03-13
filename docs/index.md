@@ -2,9 +2,9 @@
   
   function updateConfig() {
     var replaceList = {
-      '{{config.host}}': location.host,
-      '{{config.path}}': '/' + document.cookie.match(/ray_path=([^;]+)/)[1],
-      '{{config.uuid}}': document.getElementById('input_uuid')? document.getElementById('uuid').value : '请填写UUID'
+      '${config.host}': location.host,
+      '${config.path}': '/' + document.cookie.match(/ray_path=([^;]+)/)[1],
+      '${config.uuid}': document.getElementById('input_uuid')? document.getElementById('uuid').value : '请填写UUID'
     };
     document.getElementsByTagName('code').forEach(function (code) {
       for (var replaceKey in replaceList) {
@@ -58,9 +58,9 @@
       "protocol": "vmess",
       "streamSettings": {
         "wsSettings": {
-          "path": "{{config.path}}",
+          "path": "${config.path}",
           "headers": {
-            "host": "{{config.host}}"
+            "host": "${config.host}"
           }
         },
         "tlsSettings": {
@@ -73,10 +73,10 @@
       "settings": {
         "vnext": [
           {
-            "address": "{{config.host}}",
+            "address": "${config.host}",
             "users": [
               {
-                "id": "{{config.uuid}}",
+                "id": "${config.uuid}",
                 "alterId": 0,
                 "level": 0,
                 "security": "auto"
