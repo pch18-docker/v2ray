@@ -126,7 +126,7 @@
       for (var replaceKey in replaceList) {
         code.innerText.replaceAll(replaceKey, replaceList[replaceKey]);
       }
-    });
+    }
   }
   
 </script>
