@@ -54,7 +54,7 @@
     
 
     document.getElementById('input_config').value = 
-        config_URL + '?' + Object.keys(config_query).map(k=>encodeURI(k + '=' + config_query[k])).join('&');
+        config_URL + '?' + encodeURI(Object.keys(config_query).map(k=>k + '=' + config_query[k]).join('&'));
   }
   
 </script>
