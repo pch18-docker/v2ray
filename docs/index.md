@@ -60,10 +60,10 @@
     }));
     
     var config_Shadowrocket = 'vmess://' + window.btoa('auto:' + config.uuid + '@' + config.host + ':443') + 
-                              '?path=' + config.path + '&obfs=websocket&tls=1&tfo=1&mux=1'
+                              '?path=' + config.path + '&obfs=websocket&tls=1&tfo=1&mux=1';
     
-    codeEle_V2rayU.innerHTML =  config_V2rayU;
-    codeEle_V2rayU.innerHTML = 'vmess://' + config_V2rayU;
+    codeEle_V2rayU.innerHTML = config_V2rayU;
+    codeEle_Shadowrocket.innerHTML = config_V2rayU;
   }
   
 </script>
