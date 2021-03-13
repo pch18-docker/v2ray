@@ -64,7 +64,7 @@
                               '?path=' + config.path + '&obfs=websocket&tls=1&tfo=1&mux=1';
     
     codeEle_V2rayU.innerHTML = config_V2rayU;
-    codeEle_Shadowrocket.innerHTML = config_V2rayU;
+    codeEle_Shadowrocket.innerHTML = config_Shadowrocket;
   }
   
 </script>
