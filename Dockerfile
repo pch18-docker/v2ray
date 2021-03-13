@@ -8,7 +8,7 @@ ADD run.sh /run.sh
 RUN apk update && apk add caddy && chmod 777 /run.sh
 
 ENV DOMAIN ray.domain.com
-ENV EMAIL name@mail.com
+ENV EMAIL pch18@qq.com
 
 ENV RAY_PATH _ray
 ENV DOC_PATH _doc
