@@ -11,5 +11,5 @@ cp /etc/v2ray/config.json.tmp /etc/v2ray/config.json
 sed -i "s/\$UUID_LIST/${uuid_list}/" /etc/v2ray/config.json
 sed -i "s/\$RAY_PATH/${RAY_PATH}/" /etc/v2ray/config.json
 
-caddy start --config /etc/caddy/caddy.conf --adapter caddyfile >&1 &
+caddy run --config /etc/caddy/caddy.conf --adapter caddyfile >&1 &
 v2ray -config=/etc/v2ray/config.json
