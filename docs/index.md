@@ -37,7 +37,7 @@
       uuid: uuid || '请填写UUID'
     };
     
-    var config_URL = 'vmess://auto:' + config.uuid + '@' + config.host + ':443';
+    var config_URL = 'vmess://' + window.btoa('auto:' + config.uuid + '@' + config.host + ':443');
     var config_query = {
       network: 'ws',     // for V2rayU
       obfs: 'websocket', // for Shadowrocket
@@ -54,7 +54,7 @@
       tfo: 1, // TCP Fast Open for Shadowrocket
       allowInsecure: 0,
       
-      remark: config.path, // for V2rayU 
+      remark: config.host, // for V2rayU 
     };
     
 
