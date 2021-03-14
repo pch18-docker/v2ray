@@ -1,4 +1,4 @@
-FROM v2ray/official
+FROM teddysun/v2ray
 MAINTAINER pch18.cn
 
 ADD config.json /etc/v2ray/config.json.tmp
