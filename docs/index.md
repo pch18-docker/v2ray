@@ -54,6 +54,7 @@
       tfo: 1, // TCP Fast Open for Shadowrocket
       allowInsecure: 0,
       
+      remark: config.path, // for V2rayU 
     };
     
 
