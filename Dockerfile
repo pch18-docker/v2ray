@@ -13,8 +13,7 @@ ENV EMAIL pch18@qq.com
 
 ENV PATH_RAY /_ray
 ENV PATH_DOC /_doc
-ENV URL_DOC https://pch18-docker.github.io/v2ray/
-ENV URL_DISGUISE https://agar.io/
+ENV URL_DISGUISE https://agar.io
 ENV ALTER_ID 64
 
 ENV UUID_default 00000000-0000-0000-0000-000000000000
