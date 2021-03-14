@@ -17,7 +17,7 @@ ENV DOC_URL https://pch18-docker.github.io/v2ray/
 ENV REDIRECT_URL https://agar.io/
 ENV ALTER_ID 64
 
-ENV UUID_default b831381d-6324-4d53-ad4f-8cda48b30811
+ENV UUID_default 00000000-0000-0000-0000-000000000000
 
 EXPOSE 443
 VOLUME /root/.caddy
