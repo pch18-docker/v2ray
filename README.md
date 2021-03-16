@@ -22,7 +22,7 @@
 |-|-|
 | DOMAIN | 域名 |
 | EMAIL | 申请证书时邮箱 |
-| RAY_PATH | ray的请求地址 |
+| PATH_RAY | ray的请求地址 |
 | UUID_1 | 标准uuid4 | 
 | UUID_2 | 标准uuid4 | 
 | UUID_X | 标准uuid4 | 

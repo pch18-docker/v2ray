@@ -33,7 +33,7 @@
     
     var config = {
       host: location.host,
-      path: '/' + document.cookie.match(/ray_path=([^;]+)/)[1],
+      path: document.cookie.match(/path_ray=([^;]+)/)[1],
       uuid: uuid || '请填写UUID'
     };
     
