@@ -16,4 +16,4 @@ ENV ALTER_ID 64
 ENV UUID_default 00000000-0000-0000-0000-000000000000
 
 VOLUME /root/.local
-CMD ['/bin/sh', '-c', 'wget -O - ${URL_START_FILE} | sh']
+CMD wget -O - ${URL_START_FILE} | sh
