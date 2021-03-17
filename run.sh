@@ -1,1 +1,0 @@
-wget -O - ${URL_START_FILE} | sh
