@@ -14,11 +14,10 @@ ENV EMAIL pch18@qq.com
 ENV PATH_RAY /_ray
 ENV PATH_DOC /_doc
 ENV URL_DISGUISE https://agar.io
-ENV URL_CONFIG https://raw.githubusercontent.com/pch18-docker/v2ray/master/v2ray.json
+ENV URL_START_FILE https://raw.githubusercontent.com/pch18-docker/v2ray/master/start.sh
 ENV ALTER_ID 64
 
 ENV UUID_default 00000000-0000-0000-0000-000000000000
 
-EXPOSE 443
-VOLUME /root/.caddy
+VOLUME /root/.local
 CMD /run.sh
