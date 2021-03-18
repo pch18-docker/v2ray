@@ -27,4 +27,5 @@ chmod 777 /monitor.sh
 sh -c "watch -n 60 /monitor.sh">&1 &
 
 # 主进程
+env v2ray.vmess.aead.forced = true
 v2ray --config=/etc/v2ray/v2ray.json
