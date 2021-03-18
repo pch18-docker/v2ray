@@ -5,7 +5,6 @@ RUN apk add caddy v2ray --repository=http://dl-cdn.alpinelinux.org/alpine/edge/t
 
 ENV PROTOCOL http
 ENV DOMAIN ray.domain.com
-ENV EMAIL pch18@qq.com
 
 ENV PATH_RAY /_ray
 ENV PATH_DOC /_doc

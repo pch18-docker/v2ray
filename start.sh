@@ -11,7 +11,8 @@ uuid_list=''
 for line in `env|grep '^UUID_.*'`
 do 
     uuid=${line#*=}
-    uuid_list="${uuid_list},{\"id\":\"${uuid}\",\"alterId\":${ALTER_ID}}"
+    email=${${line%=*}#UUID_}
+    uuid_list="${uuid_list},{\"id\":\"${uuid}\",\"email\":\"${email}\",\"alterId\":${ALTER_ID}}"
 done
 uuid_list="${uuid_list:1}"
 sed -i "s/\$UUID_LIST/${uuid_list}/" /etc/v2ray/v2ray.json
