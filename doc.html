@@ -37,7 +37,7 @@
     <textarea id="input_config" style="width: 100%;resize: none;" rows="2" onclick="config_click()" readonly="" ></textarea> 
 
     <div id="input_config_copied" style="color:red;padding-bottom: 10px;display:none">已复制</div>
-    
+
     <div id="qrcode"></div>
 
     <script>
@@ -88,7 +88,7 @@
           type: "none",
           host: config.host,
           path: "/",
-          tls: config.path
+          tls: "tls"
         });
         var config_URL = 'vmess://' + window.btoa(config_query);
 
