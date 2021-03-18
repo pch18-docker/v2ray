@@ -2,7 +2,7 @@ _APISERVER=127.0.0.1:10085
 
 apidata () {
     local ARGS=
-    if [[ $1 == "reset" ]]; then
+    if [[ "$1" == "reset" ]]; then
       ARGS="reset: true"
     fi
     v2ctl api --server=$_APISERVER StatsService.QueryStats "${ARGS}" \
