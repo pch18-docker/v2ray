@@ -87,7 +87,7 @@
           net: "ws",
           type: "none",
           host: config.host,
-          path: "/",
+          path: config.path,
           tls: "tls"
         });
         var config_URL = 'vmess://' + window.btoa(config_query);
