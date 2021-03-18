@@ -21,6 +21,8 @@
     document.getElementById('input_uuid').value = localStorage.input_uuid || '';
   }
   
+  var qr = new QRCode(document.getElementById("qrcode"), '');
+
   updateConfig()
   
   function updateConfig() {
@@ -29,7 +31,7 @@
     
     if(!uuid.match(/^\w{8}(-\w{4}){3}-\w{12}$/)) {
       document.getElementById('input_config').value = '请先正确填写 UUID ！！';
-      document.getElementById("qrcode").innerHTML = ''
+      qr.clear()
       return 0;
     }
     
@@ -60,7 +62,7 @@
     
 
     document.getElementById('input_config').value = config_URL;
-    new QRCode(document.getElementById("qrcode"), config_URL);
+    qr.makeCode(config_URL)
   }
   
 </script>
