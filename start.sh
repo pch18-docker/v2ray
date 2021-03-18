@@ -13,7 +13,7 @@ uuid_list=''
 for line in `env|grep '^UUID_.*'`
 do 
     uuid=${line#*=}
-    email=${${line%=*}#UUID_}
+    # email=${${line%=*}#UUID_}
     uuid_list="${uuid_list},{\"id\":\"${uuid}\",\"email\":\"${email}\",\"alterId\":${ALTER_ID}}"
 done
 uuid_list="${uuid_list:1}"
@@ -21,8 +21,8 @@ sed -i "s/\$UUID_LIST/${uuid_list}/" /etc/v2ray/v2ray.json
 sed -i "s/\$PATH_RAY/\\${PATH_RAY}/" /etc/v2ray/v2ray.json
 
 # 打开流量监控
-wget -O /monitor.sh ${URL_MONITOR_CONFIG}
-chmod 777 /monitor.sh
+# wget -O /monitor.sh ${URL_MONITOR_CONFIG}
+# chmod 777 /monitor.sh
 # sh -c "watch -n 60 /monitor.sh">&1 &
 
 # 主进程
