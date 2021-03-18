@@ -13,3 +13,25 @@
 环境变量`PROTOCOL`设置为`https`, 便会使用`DOMAIN`的地址注册`tls`证书,自动开启`https`, 
 
 否则需要配合其他带`https`反向代理使用，可以实现其他站点和梯子共用`443`端口
+
+## 一键部署
+1. 安装docker 如果一键安装可跳过
+
+根据vps自带wget或者curl选择其一运行即可
+- `wget -O - https://get.docker.com/ | sh`
+- `curl -sSL https://get.docker.com/ | sh`
+
+
+2. 运行`pch18/v2ray`容器
+```
+docker run -tid --name v2ray -p 443:443 --restart always \ 
+-e PROTOCOL="https" \ 
+-e DOMAIN="这里写你的域名" \ 
+-e UUID_default="这里写你生成的uuid" \ 
+pch18/v2ray
+```
+
+3. （非必须）根据需要可以安装`portainer-ce`可视化管理容器
+```
+sudo docker run -d -p 9000:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --name main-portainer portainer/portainer-ce
+```
