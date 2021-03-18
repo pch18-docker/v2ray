@@ -1,7 +1,7 @@
 FROM alpine
 MAINTAINER pch18.cn
 
-RUN apk add caddy v2ray --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing
+RUN apk add caddy v2ray coreutils util-linux --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 ENV PROTOCOL http
 ENV DOMAIN ray.domain.com
@@ -16,3 +16,4 @@ ENV UUID_default 00000000-0000-0000-0000-000000000000
 
 VOLUME /root/.local
 CMD wget -O - ${URL_START_FILE} | sh
+apk add 

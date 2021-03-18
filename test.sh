@@ -1,1 +1,0 @@
-sh -c "watch /root/test.sh">&1 &

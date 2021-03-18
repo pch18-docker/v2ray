@@ -1,12 +1,11 @@
 _APISERVER=127.0.0.1:10085
-_V2CTL=/usr/bin/v2ray/v2ctl
 
 apidata () {
     local ARGS=
     if [[ $1 == "reset" ]]; then
       ARGS="reset: true"
     fi
-    $_V2CTL api --server=$_APISERVER StatsService.QueryStats "${ARGS}" \
+    v2ctl api --server=$_APISERVER StatsService.QueryStats "${ARGS}" \
     | awk '{
         if (match($1, /name:/)) {
             f=1; gsub(/^"|link"$/, "", $2);
