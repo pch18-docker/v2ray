@@ -23,6 +23,8 @@
 
 
 ### 2. 运行`pch18/v2ray`容器
+运行成功后，不出意外访问你的域名可以看到`agar.io`的页面。
+访问`域名/_doc`可以看到客户端下载页面，在输入框中填写uuid可以生成配置文件
 ```
 docker run -tid --name v2ray -p 443:443 --restart always \ 
 -e PROTOCOL="https" \ 
