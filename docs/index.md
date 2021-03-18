@@ -48,8 +48,8 @@
       tls: 1,
       mux: 1,
       
-      aid: 4,     // for V2rayU
-      alterId: 4, // for Shadowrocket
+      aid: 0,     // for V2rayU
+      alterId: 0, // for Shadowrocket
       
       tfo: 1, // TCP Fast Open for Shadowrocket
       allowInsecure: 0,
