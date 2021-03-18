@@ -10,4 +10,4 @@
 
 只要是环境变量以`UUID_`开头的都会自动加`v2ray`到配置里面去
 
-环境变量`PROTOCOL`设置为`https`, 便会使用`DOMAIN`的地址注册`tls`证书,自动开启`https`
+环境变量`PROTOCOL`设置为`https`, 便会使用`DOMAIN`的地址注册`tls`证书,自动开启`https`, 否则需要配合其他反向代理使用
