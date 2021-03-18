@@ -43,7 +43,7 @@
       uuid: uuid || '请填写UUID'
     };
     
-    var config_query = {
+    var config_query = JSON.stringify({
         v: "2",
         ps: config.host,
         add: config.host,
@@ -55,7 +55,7 @@
         host: config.host,
         path: "/",
         tls: config.path
-    };
+    });
     var config_URL = 'vmess://' + window.btoa(config_query);
     
 
