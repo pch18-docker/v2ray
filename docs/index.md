@@ -6,7 +6,8 @@
 
 ## Vmess 配置设置
 
-<input id="input_config" style="width: 100%;" readonly />
+<input id="input_config" style="width: 100%;" onclick="config_click()" readonly />
+<span id="input_config_copied" style="color:red;display:none">已复制</span>
 <div id="qrcode" ></div>
 
 
@@ -26,6 +27,8 @@
   updateConfig()
   
   function updateConfig() {
+    document.getElementById('input_config_copied').style.display = 'none'
+    
     var uuid = document.getElementById('input_uuid').value.trim();
     var codeEle = document.getElementsByTagName('code')[0];
     
@@ -63,8 +66,14 @@
 
     document.getElementById('input_config').value = config_URL;
     qr.makeCode(config_URL)
+    
   }
   
+  function config_click(){
+    document.getElementById('input_config').select()
+    document.getElementById('input_config_copied').style.display = 'block'
+    document.execCommand("copy")
+  }
 </script>
 
 
